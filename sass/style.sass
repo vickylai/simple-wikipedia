@@ -1,0 +1,137 @@
+$family-sans-serif: Open Sans, FontAwesome, sans-serif
+$title-stack: Work Sans, sans-serif
+$body-size: 16px
+$body-color: #666
+$background: #EFEFEF
+$primary: #4db6ac
+$alternate: #fff
+$h-color: #222
+$size-1: 3rem
+$size-2: 2rem
+$size-3: 1.25rem
+$size-4: 0.9rem
+$size-5: 0.7rem
+$size-6: 0.5rem
+
+// @import "node_modules/bulma/bulma"
+
+html
+    height: 100%
+    width: 100%
+
+body
+    height: 100%
+    width: 100%
+    background: url(https://source.unsplash.com/random) no-repeat center center fixed 
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    font-size: $body-size
+    font-family: $family-sans-serif
+
+a
+    color: $primary
+    :hover
+        color: $alternate
+        font-style: none
+    :active
+        color: $primary
+
+h1
+    color: $h-color
+    font-family: $title-stack
+
+h2
+    color: $h-color
+    font-family: $title-stack
+
+ul
+    padding: 0
+
+img 
+    border-radius: 5px
+    border: 1px solid #dbdbdb
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4)
+
+.thumbnail
+    border: none
+
+.hide
+    display: none
+
+.top-pad
+    padding-top: 1rem
+
+.no-padding
+    padding: 0
+
+.nav-item
+    text-transform: uppercase
+    font-size: 14px
+
+.nav
+
+.footer
+    position: absolute
+    bottom: 0
+    width: 100%
+    font-size: 0.6rem
+    color: #EFEFEF
+    text-align: center
+    padding: 20px 0
+    a
+        color: #EFEFEF
+        text-decoration: none
+    fa
+        font-size: 0.6rem
+
+.panel
+    background-color: #fff
+    opacity: 0.9
+    border-radius: 2px
+    box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.4)
+    text-align: center
+    width: 50%
+    height: 400px
+    margin: 10% auto
+    padding: 20px
+
+.panel-title
+    font-size: $size-1
+
+#searchbox
+    width: 90%
+    margin: 30px 0px
+    font-family: FontAwesome
+    border: solid 1px #666
+    border-radius: 3px
+    padding: 5px
+
+::-webkit-input-placeholder
+    text-align: right
+
+::-moz-placeholder
+    text-align: right
+
+#buttonrow
+    width: 90%
+    margin: 0 auto
+    .col
+        padding: 0
+
+button
+    font-size: 1rem
+    border: solid 1px #666
+    border-radius: 3px
+    background: #fff
+    padding: 5px 10px
+
+#searchWiki
+    float: left
+
+#randomWiki
+    float: right
+
+.panel-contents
+    margin: 15% auto

@@ -1,0 +1,18 @@
+{
+  "name": "wiki-viewer",
+  "version": "1.0.0",
+  "description": "Very slick Wikipedia search.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vicky Lai",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "custombox": "^4.0.0",
+    "dev": "^0.1.3"
+  }
+}
