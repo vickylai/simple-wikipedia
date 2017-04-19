@@ -22,7 +22,7 @@ html
 body
     height: 100%
     width: 100%
-    background: url(https://source.unsplash.com/random) no-repeat center center fixed 
+    background: url(https://images.unsplash.com/photo-1431608660976-4fe5bcc2112c) no-repeat center center fixed 
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -86,6 +86,9 @@ img
     fa
         font-size: 0.6rem
 
+.hero
+    height: 100vh
+
 .panel
     background-color: #fff
     opacity: 0.9
@@ -93,26 +96,29 @@ img
     box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.4)
     text-align: center
     width: 50%
+    max-width: 500px
     height: 400px
     margin: 10% auto
     padding: 20px
+    @media (max-width: 550px)
+        width: 90%
 
 .panel-title
     font-size: $size-1
 
 #searchbox
     width: 90%
-    margin: 30px 0px
+    height: 30px
+    margin: 30px 15px
     font-family: FontAwesome
     border: solid 1px #666
     border-radius: 3px
-    padding: 5px
 
 ::-webkit-input-placeholder
-    text-align: right
+    text-align: center
 
 ::-moz-placeholder
-    text-align: right
+    text-align: center
 
 #buttonrow
     width: 90%
@@ -120,7 +126,7 @@ img
     .col
         padding: 0
 
-button
+button, .button
     font-size: 1rem
     border: solid 1px #666
     border-radius: 3px
@@ -133,5 +139,24 @@ button
 #randomWiki
     float: right
 
+#results
+    background-color: #fff
+    opacity: 0.9
+    border-radius: 2px
+    box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.4)
+    text-align: center
+    width: 90%
+    height: auto
+    margin: 10% auto
+    padding: 20px
+
 .panel-contents
     margin: 15% auto
+
+.articletitle
+    font-size: $size-3
+    font-weight: bold
+    text-align: left
+
+.articleextract
+    text-align: left

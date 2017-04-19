@@ -19,7 +19,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <!-- project-specific javascript   -->
-<script src="/js/custombox.min.js"></script>
 <script type="text/javascript" src="/js/wiki.js"></script>
 
 <!-- Bootstrap 4.0 -->
@@ -32,7 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lobster|Open+Sans|Pacifico|Raleway">
 
 <!-- library css -->
-<link href="/css/custombox.min.css" rel="stylesheet">
+
 
 <!-- project CSS -->
 <link rel="stylesheet" href="/css/style.css">
@@ -42,12 +41,13 @@
 
 <body>
 
+<div class="hero">
 <div class="panel">
 <div class="panel-contents">
         <div class="panel-title">Search Wikipedia</div>
         <div class="row">
             <div class="col">
-                <form action="/"><input id="searchbox" type="text" placeholder="&#xF002;">
+                <form><input id="searchbox" type="text" placeholder="&#xF002;">
             </div>
         </div>
         <div class="row" id="buttonrow"><!-- Button row -->
@@ -55,17 +55,24 @@
                 <button id="searchWiki" type="submit">Let's go!</button>
             </div>
         <div class="col">
-            <button id="randomWiki" type="">I'm bored.</button>
+            <input type="button" class="button" id="randomWiki" onclick="location.href='https://en.wikipedia.org/wiki/Special:Random';" value="I'm bored.">
         </div>
         </div> <!-- End buttons row -->
         </form>
 </div>
     </div> <!-- End panel -->
+</div><!-- End hero -->
 
 <div class="footer">
-    <i class="fa fa-copyright"></i> <a href="https://vickylai.com" target="_blank">Vicky Lai</a> 2017
+    <a href="https://vickylai.com" target="_blank">Vicky Lai</a> 2017
 </div>
 
-<div id="modal" class="hide">This is modal!</div>
+<div id="results">
+    <h1>Search Results</h1>
+<!-- Magic goes here -->
+<div class="resultLine">
+    <p class="articletitle"><a href="/">Kitten</a></p>
+    <p class="articleextract">Cat ipsum ftw.</p>
+</div>
 
 </body>
