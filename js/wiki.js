@@ -1,3 +1,5 @@
+// Known issue: after first successful search, results of subsequent searches don't display.
+
 function scrollToSearch() {
     var target = $('#results');
     $('html, body').animate({
