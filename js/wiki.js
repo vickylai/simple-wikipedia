@@ -23,7 +23,6 @@ function makeResultLine(title, extract, articleURL) {
     resultLine.appendChild(titleP);
     resultLine.appendChild(extractP);
     results.appendChild(resultLine);
-
 }
 
 $(document).ready(function() {
@@ -35,7 +34,14 @@ $(document).ready(function() {
 var query = document.querySelector('#searchbox').value;
 var apiURL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&inprop=url&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch='+query;
 
-// Show loading graphic
+// Catch empty input
+if (query.length == 0) {
+    $('.alert').removeClass('hide');
+    $('#alert').html('Try typing something in the box above first.')
+} else {
+
+// Show loading indicator
+$('#buttonText').html('Fetching...');
 
 // Request search results from Wikipedia
 $.ajax({
@@ -46,6 +52,7 @@ $.ajax({
     cache: false,
     success: function(json) {
         // Sort out results
+        if (json.hasOwnProperty('query')) {
         var pages = json.query.pages;
         for (var val in pages) {
             var title = pages[val].title;
@@ -53,9 +60,21 @@ $.ajax({
             var articleURL = 'https://en.wikipedia.org/?curid='+pages[val].pageid;
             makeResultLine(title, extract, articleURL);
         }
+        $('.alert').addClass('hide');
+        $('#results').removeClass('hide');
         // Scroll to results section
         scrollToSearch();
+        $('#buttonText').html('Go again?');
+    } // end if query
+        // If nothing found
+        else {
+            $('.alert').removeClass('hide');
+            $('#alert').html('We don\'t have anything matching that. \:\(');
+            $('#buttonText').html('Go again?');
+        }
     }// end success
+
 });// end ajax
+};// end if empty input
 }); // end on click
 }); // end document ready

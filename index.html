@@ -30,18 +30,13 @@
 <!-- Google Fonts stack -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lobster|Open+Sans|Pacifico|Raleway">
 
-<!-- library css -->
-
-
 <!-- project CSS -->
 <link rel="stylesheet" href="/css/style.css">
-
 
 </head>
 
 <body>
 
-<div class="hero">
 <div class="panel">
 <div class="panel-contents">
         <div class="panel-title">Search Wikipedia</div>
@@ -50,9 +45,14 @@
                 <form><input id="searchbox" type="text" placeholder="&#xF002;">
             </div>
         </div>
+        <div class="row">
+            <div class="col alert hide">
+                <span id="alert"></span>
+            </div>
+        </div>
         <div class="row" id="buttonrow"><!-- Button row -->
             <div class="col">
-                <button id="searchWiki" type="submit">Let's go!</button>
+                <button id="searchWiki" type="submit"><span id="buttonText">Let's go!</span></button>
             </div>
         <div class="col">
             <input type="button" class="button" id="randomWiki" onclick="location.href='https://en.wikipedia.org/wiki/Special:Random';" value="I'm bored.">
@@ -61,18 +61,13 @@
         </form>
 </div>
     </div> <!-- End panel -->
-</div><!-- End hero -->
+
 
 <div class="footer">
     <a href="https://vickylai.com" target="_blank">Vicky Lai</a> 2017
 </div>
 
-<div id="results">
+<div id="results" class="hide">
     <h1>Search Results</h1>
 <!-- Magic goes here -->
-<div class="resultLine">
-    <p class="articletitle"><a href="/">Kitten</a></p>
-    <p class="articleextract">Cat ipsum ftw.</p>
-</div>
-
 </body>
