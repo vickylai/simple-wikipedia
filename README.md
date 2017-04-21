@@ -14,4 +14,4 @@ Created for [FreeCodeCamp](https://www.freecodecamp.com/vickylaixy)'s Front-End 
 
 ## Screenshot
 
-... Coming...
+![Search me!](/screenshot.png)
