@@ -1,1 +1,5 @@
-node_modules
+node_modules/
+unoptimized/
+sass/style.sass
+gulpfile.js
+package.json
