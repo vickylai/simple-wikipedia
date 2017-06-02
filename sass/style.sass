@@ -1,165 +1,163 @@
-$family-sans-serif: Open Sans, FontAwesome, sans-serif
-$title-stack: Work Sans, sans-serif
-$body-size: 16px
-$body-color: #666
-$background: #EFEFEF
-$primary: #4db6ac
-$alternate: #fff
+$sans: Open Sans, sans-serif
+$serif: Lora, serif
+
+$text: #4a4a4a
+$background: #fdc23e
+$primary: #4da1a9
+$accent: #ff7761
+$orange: #f9a11b
+$white: #fff
+$subtle: #fddd95
 $h-color: #222
+
+$size-body: 16px
 $size-1: 3rem
 $size-2: 2rem
 $size-3: 1.25rem
 $size-4: 0.9rem
 $size-5: 0.7rem
 $size-6: 0.5rem
+$size-display: 5rem
 
-// @import "node_modules/bulma/bulma"
+@import "node_modules/bulma/sass/utilities/_all"
+@import "node_modules/bulma/sass/base/_all"
+@import "node_modules/bulma/sass/layout/_all"
+@import "node_modules/bulma/sass/grid/_all"
+@import "node_modules/bulma/sass/elements/_all"
 
 html
-    height: 100vh
+    background: $background
 
 body
-    height: 100vh
-    width: 100%
-    background: url(/slick-wiki-search/books.jpg) no-repeat center center fixed 
-    -webkit-background-size: cover
-    -moz-background-size: cover
-    -o-background-size: cover
-    background-size: cover
-    font-size: $body-size
-    font-family: $family-sans-serif
-    position: absolute
-    top: 0
+    background: $background
+    font-size: $size-body
+    font-family: $sans
 
 a
     color: $primary
-    :hover
-        color: $alternate
+    &:hover
+        color: $accent
         font-style: none
-    :active
+    &:active
         color: $primary
 
 h1
     color: $h-color
-    font-family: $title-stack
+    font-family: $serif
+    &.display
+        font-weight: 700
 
 h2
     color: $h-color
-    font-family: $title-stack
+    font-family: $serif
 
-ul
-    padding: 0
-
-img 
-    border-radius: 5px
-    border: 1px solid #dbdbdb
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4)
-
-.thumbnail
-    border: none
+.section
+    background: $background
+    padding-top: 30vh
+    @include mobile
+        padding-top: 10vh
+    &#search
+        height: 100vh
 
 .hide
     display: none
 
 .top-pad
-    padding-top: 1rem
+    padding-top: 3rem
 
 .no-padding
     padding: 0
 
-.nav-item
-    text-transform: uppercase
-    font-size: 14px
-
-.nav
-
 .footer
-    position: absolute
-    bottom: 0
-    width: 100%
-    font-size: 0.6rem
-    color: #EFEFEF
+    font-size: $size-4
+    color: $subtle
     text-align: center
-    padding: 20px 0
+    padding: 5rem 0
     a
-        color: #EFEFEF
+        color: $subtle
         text-decoration: none
-    fa
-        font-size: 0.6rem
+    @include mobile
+        padding: 3rem 0
 
-.panel
-    background-color: #fff
-    opacity: 0.9
-    border-radius: 2px
-    box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.6)
-    text-align: center
-    width: 50%
-    max-width: 500px
-    height: 400px
-    margin: 10% auto
-    padding: 20px
-    @media (max-width: 550px)
-        width: 90%
-
-.panel-title
-    font-size: $size-1
-
-#searchbox
-    width: 90%
-    height: 30px
-    margin: 30px 15px
-    font-family: FontAwesome
-    border: solid 1px #666
-    border-radius: 3px
-
-::-webkit-input-placeholder
-    text-align: center
-
-::-moz-placeholder
-    text-align: center
+.display
+    font-size: $size-display
+    @include mobile
+        font-size: $size-1
+    &.smaller
+        font-size: $size-1
+        @include mobile
+            font-size: $size-2
 
 #buttonrow
     width: 90%
-    margin: 0 auto
-    .col
-        padding: 0
 
 button, .button
-    font-size: 1rem
-    border: solid 1px #666
+    font-size: $size-3
     border-radius: 3px
-    background: #fff
-    padding: 5px 10px
-
-#searchWiki
-    float: left
-
-#randomWiki
-    float: right
+    width: 200px
+    @include mobile
+        width: auto
+        font-size: $size-body
 
 #results
-    background-color: #fff
-    opacity: 0.9
-    border-radius: 2px
-    box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.6)
+    background-color: $background
+    border-radius: 0px
     text-align: center
     width: 90%
     height: auto
     margin: 10% auto
-    padding: 20px
+    padding: 2rem 3rem
+    border: 10px solid $orange
+    @include mobile
+        width: 100%
+        padding: 1rem
 
 .alert
-    font-size: $size-4
-    color: #c62828
-    padding-bottom: 1rem
-
-.panel-contents
-    margin: 15% auto
+    font-size: $size-3
+    margin-left: 2rem
+    padding: 1rem 0
 
 .articletitle
+    margin-top: 1rem
+    margin-bottom: 0.5rem
     font-size: $size-3
     font-weight: bold
     text-align: left
+    a
+        color: $h-color
+        font-weight: 700
 
 .articleextract
     text-align: left
+    color: $text
+    padding-bottom: 1rem
+    border-bottom: 1px solid $white
+
+#searchbox
+    width: 90%
+    height: 100px
+    border: none
+
+::-webkit-input-placeholder
+    font-size: $size-1
+    font-family: $sans
+    color: $subtle
+    @include mobile
+        font-size: $size-3
+
+::-moz-placeholder
+    font-size: $size-1
+    font-family: $sans
+    color: $subtle
+    @include mobile
+        font-size: $size-3
+
+.input, .textarea
+    font-size: $size-1
+    font-family: $sans
+    color: $white
+    border-radius: 0px
+    background: transparent
+    box-shadow: 0px 15px 0px $accent
+    @include mobile
+        font-size: $size-3

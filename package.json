@@ -9,6 +9,7 @@
   "author": "Vicky Lai",
   "license": "ISC",
   "devDependencies": {
+    "critical": "^0.8.4",
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {

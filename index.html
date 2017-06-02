@@ -8,9 +8,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Vicky's Wiki App">
+<meta name="description" content="A fun and simplified Wikipedia search that keeps the focus on your query. Fast and responsive on all screens.">
 
-<title>Very Slick Wikipedia Search</title>
+<title>Search Wikipedia</title>
 
 <!-- jQuery -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -21,14 +21,8 @@
 <!-- project-specific javascript   -->
 <script type="text/javascript" src="/slick-wiki-search/js/wiki.js"></script>
 
-<!-- Bootstrap 4.0 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
-
-<!-- Fontawesome Icons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-
 <!-- Google Fonts stack -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lobster|Open+Sans|Pacifico|Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Lora">
 
 <!-- project CSS -->
 <link rel="stylesheet" href="/slick-wiki-search/css/style.css">
@@ -37,37 +31,41 @@
 
 <body>
 
-<div class="panel">
-<div class="panel-contents">
-        <div class="panel-title">Search Wikipedia</div>
-        <div class="row">
-            <div class="col">
-                <form><input id="searchbox" type="text" placeholder="&#xF002;">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col alert hide">
-                <span id="alert"></span>
-            </div>
-        </div>
-        <div class="row" id="buttonrow"><!-- Button row -->
-            <div class="col">
-                <button id="searchWiki" type="submit"><span id="buttonText">Let's go!</span></button>
-            </div>
-        <div class="col">
-            <input type="button" class="button" id="randomWiki" onclick="location.href='https://en.wikipedia.org/wiki/Special:Random';" value="I'm bored.">
-        </div>
-        </div> <!-- End buttons row -->
-        </form>
-</div>
-    </div> <!-- End panel -->
+<section class="section" id="search">
+<div class="container">
 
+        <h1 class="display">Search Wikipedia</h1>
 
-<div class="footer">
-    <a href="https://vickylai.com" target="_blank">Vicky Lai</a> 2017
+        <div class="field">
+        <p class="control">
+            <input id="searchbox" class="input" type="text" placeholder="insert something clever">
+        </p>
+        </div>
+
+        <p class="help is-danger alert hide">
+            <span id="alert"></span>
+        </p>
+        
+        <div class="field is-grouped top-pad">
+        <p class="control">
+            <button class="button is-primary" id="searchWiki"><span id="buttonText">Let's go!</span></button>
+        </p>
+        <p class="control">
+            <button class="button is-primary" id="randomWiki" onclick="location.href='https://en.wikipedia.org/wiki/Special:Random';">Random me.</button>
+        </p>
+        </div>
+         
 </div>
+</section>
 
 <div id="results" class="hide">
-    <h1>Search Results</h1>
+    <h1 class="display smaller">Search Results</h1>
 <!-- Magic goes here -->
+</div>
+
+<div class="container footer has-text-centered">
+    Made with <3 by <a href="https://vickylai.io" target="_blank">Vicky Lai</a> 2017
+</div>
+
+
 </body>
