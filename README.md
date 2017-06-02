@@ -12,4 +12,4 @@ Search Wikipedia without distraction, and some fun colors.
 
 ## Screenshot
 
-![Search me!](/slick-wiki-search/img/screenshot.png)
+![Search me!](/img/screenshot.png)
