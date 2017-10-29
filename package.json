@@ -1,7 +1,7 @@
 {
-  "name": "wiki-viewer",
+  "name": "simple-wikipedia",
   "version": "1.0.0",
-  "description": "Very slick Wikipedia search.",
+  "description": "An uncluttered Wikipedia search.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

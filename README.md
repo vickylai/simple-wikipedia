@@ -1,6 +1,6 @@
-# Wikipedia Search Page
+# simple-wikipedia: An uncluttered Wikipedia search page.
 
-**See the whole thing working here: [vickylai.io/slick-wiki-search](https://vickylai.io/slick-wiki-search/)**
+**See the whole thing working here: [vickylai.io/simple-wikipedia](https://vickylai.io/simple-wikipedia/)**
 
 Search Wikipedia without distraction, and some fun colors.
 
