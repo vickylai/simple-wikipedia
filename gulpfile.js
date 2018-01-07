@@ -1,47 +1,33 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var gutil = require('gulp-util');
-var critical = require('critical').stream;
+var gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  gutil = require('gulp-util'),
+  critical = require('critical').stream;
 
-gulp.task("default", function () {
-  gulp.src('sass/style.sass')
-    .pipe(sass({outputStyle: 'compressed'}))
+gulp.task('sass', function () {
+  // Process sass to minified css & autoprefix
+  gulp.src('sass/*.sass')
+    .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('wiki-search/css/'));
+    .pipe(gulp.dest('css/'));
+
 });
 
-gulp.task("watch", function () {
-  gulp.watch('sass/style.sass', function() {
-    gulp.src('sass/style.sass')
-      .pipe(sass({outputStyle: 'compressed'}))
-      .pipe(autoprefixer())
-      .pipe(gulp.dest('wiki-search/css/'));
-  });
-});
-
-gulp.task("print", function(){
-     gulp.src(
-        'wiki-search/index.html')
-    .pipe(gulp.dest('public/'));
-     gulp.src(
-        'wiki-search/404.html')
-    .pipe(gulp.dest('public/'));
-    gulp.src(
-      'wiki-search/css/**/*')
-      .pipe(gulp.dest('public/css/'));
-    gulp.src(
-      'wiki-search/js/**/*')
-      .pipe(gulp.dest('public/js/'));
-    gulp.src(
-      'wiki-search/img/**/*')
-      .pipe(gulp.dest('public/img/'));
-});
-
-// Generate, Minify, & Inline Critical-path CSS NOT WORKING
+// Generate, Minify, & Inline Critical-path CSS
 gulp.task('critical', function () {
-    return gulp.src('critical.html')
-        .pipe(critical({base: '/home/vicky/data/repos/wiki-viwer-v2/', inline: true, minify:true, css: ['wiki-search/css/style.css']}))
-        .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
-        .pipe(gulp.dest('/home/vicky/data/repos/wiki-viwer-v2/critical/'));
+  return gulp.src('layouts/index.html') // Input file(s)
+    .pipe(critical({ base: '/', inline: true, minify: true, css: ['css/min.css'] }))
+    .on('error', function (err) { gutil.log(gutil.colors.red(err.message)); })
+    .pipe(gulp.dest('/'));
+});
+
+gulp.task('watch', function () {
+  // Process sass to minified css & autoprefix
+  gulp.watch('sass/*.sass', function () {
+    gulp.src('sass/*.sass')
+      .pipe(sass({ outputStyle: 'compressed' }))
+      .pipe(autoprefixer())
+      .pipe(gulp.dest('css/'));
+  });
+
 });
